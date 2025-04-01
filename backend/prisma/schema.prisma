@@ -100,7 +100,7 @@ model Renting {
   IsArchived Boolean? @default(false) @map("isarchived")
 
   Customer   Customer @relation(fields: [CustomerID], references: [CustomerID], onDelete: Cascade, onUpdate: NoAction)
-  Employee   Employee @relation(fields: [HandledBy], references: [EmployeeID], onDelete: SetNull, onUpdate: NoAction)
+  Employee   Employee? @relation(fields: [HandledBy], references: [EmployeeID], onDelete: SetNull, onUpdate: NoAction)
   Room       Room     @relation(fields: [RoomID], references: [RoomID], onDelete: NoAction, onUpdate: NoAction)
   Hotel      Hotel    @relation(fields: [HotelID], references: [HotelID], onDelete: Cascade, onUpdate: NoAction)
   Transaction Transaction[] 
